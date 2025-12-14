@@ -65,11 +65,11 @@ export default function Achievements() {
                   transition-all duration-500"
               >
                 {/* Glow hover MỜ – CAO CẤP */}
-                <div
+                {/* <div
                   className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500
                       bg-[radial-gradient(circle_at_top,#FF6EC7_0%,transparent_80%)]
                       blur-3xl -z-10"
-                />
+                /> */}
 
                 {/* VALUE */}
                 <motion.p

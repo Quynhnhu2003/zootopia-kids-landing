@@ -21,7 +21,7 @@ export default function RootLayout({
   
   return (
     <html lang="vi" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="bg-eduIvory text-eduNavy font-[var(--font-inter)]">
+      <body className="bg-eduIvory text-eduNavy font-(--font-inter)">
         <LuxuryCursor />
         {children}
       </body>
