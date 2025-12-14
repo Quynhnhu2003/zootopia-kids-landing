@@ -8,7 +8,6 @@ const sections = [
   { id: 'featuredProducts', label: 'Nổi bật' },
   { id: 'products', label: 'Sản phẩm' },
   { id: 'reviews', label: 'Đánh giá' },
-  { id: 'contact', label: 'Liên hệ' },
 ];
 
 export default function Navbar() {
@@ -32,8 +31,6 @@ export default function Navbar() {
       behavior: 'smooth',
     });
   };
-  
-  
 
   // ** useEffect
   useEffect(() => {

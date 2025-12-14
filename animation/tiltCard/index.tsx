@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ReactNode } from "react";
@@ -5,9 +6,14 @@ import { ReactNode } from "react";
 interface TiltCardProps {
   children: ReactNode;
   className?: string;
+  style?: any;
 }
 
-export default function TiltCard({ children, className }: TiltCardProps) {
+export default function TiltCard({
+  children,
+  className,
+  style,
+}: TiltCardProps) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -17,7 +23,7 @@ export default function TiltCard({ children, className }: TiltCardProps) {
   return (
     <motion.div
       className={`bg-white rounded-edu p-6 shadow-sm hover:shadow-lg cursor-pointer ${className}`}
-      style={{ rotateX, rotateY, perspective: 600 }}
+      style={{ rotateX, rotateY, perspective: 600, ...style }}
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         const px = e.clientX - rect.left - rect.width / 2;

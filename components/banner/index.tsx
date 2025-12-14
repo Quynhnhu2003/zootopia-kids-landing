@@ -28,6 +28,21 @@ export default function Banner() {
   // ** State
   const [index, setIndex] = useState<number>(0);
 
+  // ** Functions
+  const scrollToSection = (id: string) => {  
+    const el = document.getElementById(id);
+    if (!el) return;
+  
+    const yOffset = 90;
+    const y =
+      el.getBoundingClientRect().top + window.pageYOffset - yOffset;
+  
+    window.scrollTo({
+      top: y,
+      behavior: 'smooth',
+    });
+  };
+
   // ** useEffect
   useEffect(() => {
     const timer = setInterval(() => {
@@ -38,7 +53,10 @@ export default function Banner() {
   }, []);
 
   return (
-    <section id='program' className="w-full bg-linear-to-r from-eduMint to-eduIvory py-24 overflow-hidden">
+    <section
+      id="program"
+      className="w-full bg-linear-to-r from-eduMint to-eduIvory py-24 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center px-6 gap-12">
         <AnimatePresence mode="wait">
           <motion.div
@@ -54,10 +72,13 @@ export default function Banner() {
             <p className="text-eduGray mb-8 text-lg">{slides[index].desc}</p>
 
             <div className="flex gap-4">
-              <button className="bg-eduGold text-eduNavy px-7 py-3 rounded-edu font-semibold shadow hover:scale-105 transition-transform">
+              <button
+                onClick={() => scrollToSection('products')}
+                className="bg-eduGold text-eduNavy px-7 py-3 rounded-edu font-semibold shadow hover:scale-105 transition-transform rounded-md"
+              >
                 Xem bộ sưu tập
               </button>
-              <button className="border border-eduBlue px-7 py-3 rounded-edu font-semibold text-eduBlue hover:scale-105 transition-transform">
+              <button className="border border-eduBlue px-7 py-3 rounded-edu font-semibold text-eduBlue hover:scale-105 transition-transform rounded-md">
                 Tư vấn 1–1
               </button>
             </div>

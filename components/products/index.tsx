@@ -57,7 +57,7 @@ export default function Products() {
           </h2>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
           {products.map((p, i) => (
             <Reveal key={i}>
               <TiltCard className="h-full flex flex-col bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 relative overflow-hidden">
